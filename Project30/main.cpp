@@ -48,6 +48,30 @@ public:
 		withholdingOfAnamount = wa;
 	}
 
+	void experience()
+	{
+		int nowyear = 2025;
+		int experience = nowyear - yearOfEmployment;
+		cout << experience;
+	};
+
+	void accrual()
+	{
+		int accrual = salary * (dayOfWorks / dayDo);
+		cout << accrual;
+	};
+
+	void retention()
+	{
+		double retention = campingTax * 0.1;
+		double flientax = (campingTax - retention) * 0.13;
+		cout << "retention: " << retention << endl;
+		cout << "\tflientax: " << flientax << endl;
+		double all = retention + flientax;
+		cout << "\tall: " << all << endl;
+		double forissuance = campingTax - all;
+		cout << "\tforissuance: " << forissuance << endl;
+	};
 
 
 	void Print()
@@ -61,5 +85,9 @@ public:
 
 int main()
 {
-
+	Payment obj("Ivanov", "Petr", "Sergeevich", 45000, 2018, 0.15, 1200, 22, 5, 52000, 3000);
+	obj.Print();
+	obj.experience();
+	obj.accrual();
+	obj.retention();
 }
